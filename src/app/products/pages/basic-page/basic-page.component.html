@@ -1,0 +1,79 @@
+<p-panel header="Pipes Básicos" class="p-1">
+  <p>
+    Pipes incluídos en Angular - Usualmente en el common module
+  </p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="Uppercase">
+      <a ngNonBindable>{{ name | uppercase }}</a> -> {{ lowerName | uppercase }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Lowercase">
+      <a ngNonBindable>{{ name | lowercase }}</a> -> {{ upperName | lowercase }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Titlecase">
+      <a ngNonBindable>{{ name | titlecase }}</a> -> {{ alterName | titlecase }}
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Fechas con formato simple" subheader="date:'format'">
+      <ol>
+        <li>short</li>
+        <li>long</li>
+        <li>MMMM</li>
+        <li>MMMM dd, yyyy</li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ exampleDate | date:'short' }}</li>
+        <li>{{ exampleDate | date:'long' }}</li>
+        <li>{{ exampleDate | date:'MMMM' }}</li>
+        <li>{{ exampleDate | date:'MMMM dd, yyyy' }}</li>
+      </ol>
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Fechas con otra zona horaria" subheader="date:'format':'timezone'">
+      <ol>
+        <li>short & GMT-4</li>
+        <li>short & GMT-3</li>
+        <li>short & GMT-2</li>
+        <li>short & GMT-1</li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ exampleDate | date:'short':'GMT-4' }}</li>
+        <li>{{ exampleDate | date:'short':'GMT-3' }}</li>
+        <li>{{ exampleDate | date:'short':'GMT-2' }}</li>
+        <li>{{ exampleDate | date:'short':'GMT-1' }}</li>
+      </ol>
+    </p-card>
+  </div>
+
+  <div class="col-4">
+    <p-card header="Fechas en otro idioma" subheader="date:'format':'timezone':'lang'">
+      <ol>
+        <li>long & GMT-6 & en-US</li>
+        <li>long & GMT-6 & ko-KP</li>
+        <li>long & GMT-6 & ja   </li>
+        <li>long & GMT-6 & fr-CA</li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ exampleDate | date:'long':'':'en-US' }}</li>
+        <li>{{ exampleDate | date:'long':'':'ko-KP' }}</li>
+        <li>{{ exampleDate | date:'long':'':'ja' }}</li>
+        <li>{{ exampleDate | date:'long':'':'fr-CA' }}</li>
+      </ol>
+    </p-card>
+  </div>
+</div>

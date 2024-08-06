@@ -1,0 +1,62 @@
+<p-panel header="Pipes Numéricos" class="p-1">
+  <p>
+    Pipes incluídos en Angular - Usualmente en el common module
+  </p>
+</p-panel>
+
+<div class="grid">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Netas" subheader="del presente año">
+      <ol>
+        <li><a ngNonBindable>{{ ventas }}</a></li>
+        <li><a ngNonBindable>{{ ventas | number }}</a></li>
+        <li><a ngNonBindable>{{ ventas | number:'1.2-2' }}</a></li>
+        <li><a ngNonBindable>{{ ventas | number:'1.2-6' }}</a></li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ totalSells }}</li>
+        <li>{{ totalSells | number }}</li>
+        <li>{{ totalSells | number:'1.2-2' }}</li>
+        <li>{{ totalSells | number:'1.2-6' }}</li>
+      </ol>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Brutas" subheader="del presente año">
+      <ol>
+        <li><a ngNonBindable>{{ ventas | currency }}</a></li>
+        <li><a ngNonBindable>{{ ventas | currency:'CRC' }}</a></li>
+        <li><a ngNonBindable>{{ ventas | currency:'BRL':'symbol-narrow' }}</a></li>
+        <li><a ngNonBindable>{{ ventas | currency:'BRL':'symbol-narrow':'1.2-4' }}</a></li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ totalSells | currency }}</li>
+        <li>{{ totalSells | currency:'CRC' }}</li>
+        <li>{{ totalSells | currency:'BRL':'symbol-narrow'}}</li>
+        <li>{{ totalSells | currency:'BRL':'symbol-narrow':'1.2-4' }}</li>
+      </ol>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Brutas" subheader="del presente año">
+      <ol>
+        <li><a ngNonBindable>{{ percent }}</a></li>
+        <li><a ngNonBindable>{{ percent | percent }}</a></li>
+        <li><a ngNonBindable>{{ percent | percent:'1.2-2' }}</a></li>
+        <li><a ngNonBindable>{{ percent | percent:'1.2-8' }}</a></li>
+      </ol>
+      <hr>
+      <ol>
+        <li>{{ percent }}</li>
+        <li>{{ percent | percent }}</li>
+        <li>{{ percent | percent:'1.2-2' }}</li>
+        <li>{{ percent | percent:'1.2-8' }}</li>
+      </ol>
+    </p-card>
+  </div>
+
+</div>
