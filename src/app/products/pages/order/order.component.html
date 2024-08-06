@@ -1,0 +1,56 @@
+<p-panel header="Pipes Personalizados" class="p-1">
+  <p>
+    Pipes personalizados - creados por nosotros.
+    {{ 'nanda' | toggleCase:isUpper }}
+    {{ 'NANDA' | toggleCase:isUpper }}
+    {{ 'nanda' | toggleCase:isUpper }}
+  </p>
+</p-panel>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+    <p-button class="mr-2"
+              label="Toggle Case"
+              icon="pi pi-search"
+              (click)="toggleUpperCase()"
+    />
+  </div>
+  <div class="p-toolbar-group-end">
+      <p-button class="mr-2"
+                label="Nombre"
+                icon="pi pi-sort"
+                (click)="setCriteria('name')"
+      />
+      <p-button class="mr-2"
+                label="Publisher"
+                icon="pi pi-sort"
+                (click)="setCriteria('owner')"
+      />
+      <p-button label="Voladores"
+                icon="pi pi-sort"
+                (click)="setCriteria('flying')"
+      />
+  </div>
+</p-toolbar>
+
+
+<div class="grid">
+  <p-card class="col mt-2" header="Lista de Héroes">
+    <p-table [value]="heroes | sortBy:orderBy" [tableStyle]="{ 'min-width': '25rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Publisher</th>
+              <th>Name</th>
+              <th>¿Vuela?</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+          <tr>
+              <td>{{ hero.owner  | i18nPlural:publisherMap }}</td>
+              <td>{{ hero.name   | titlecase }}</td>
+              <td>{{ hero.flying | canFly }}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </p-card>
+</div>
